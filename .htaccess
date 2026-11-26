@@ -1,0 +1,13 @@
+# Defence in depth. The supported setup uses public/ as DocumentRoot.
+# If Apache is mistakenly configured with the project root as DocumentRoot,
+# these rules deny direct access to sensitive files and directories.
+Options -Indexes
+
+<FilesMatch "^(\.env.*|composer\.(json|lock)|symfony\.lock|phpunit\.dist\.xml)$">
+    Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(src|config|migrations|tests|var|vendor|assets|bin|templates|translations|\.git)(/|$) - [F,L]
+</IfModule>
