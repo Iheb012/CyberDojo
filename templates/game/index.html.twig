@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Le Dojo{% endblock %}
+
+{% block body %}
+    <div class="game-page">
+        <div class="game"
+             data-controller="game"
+             data-game-start-value="dojo"
+             data-game-api-value="{{ app.request.basePath }}/api/jeu"
+             data-game-csrf-value="{{ csrf_token('game') }}"
+             data-game-maps-value="{{ {
+                 'dojo': asset('game/maps/dojo.json'),
+                 'lab-web': asset('game/maps/lab-web.json')
+             }|json_encode }}">
+            <header class="game-hud">
+                <a href="{{ app.request.basePath }}/">&larr; Quitter</a>
+                <strong data-game-target="title"></strong>
+                <span class="game-hint" data-game-target="hint"></span>
+                <button type="button" class="game-fs" data-action="game#toggleFullscreen" title="Plein écran (F)">⛶</button>
+            </header>
+            <div class="game-stage" data-game-target="stage">
+                <canvas data-game-target="canvas"></canvas>
+            </div>
+        </div>
+    </div>
+{% endblock %}
