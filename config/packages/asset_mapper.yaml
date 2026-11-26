@@ -4,6 +4,12 @@ framework:
         paths:
             - assets/
         missing_import_mode: strict
+        # No CDN: modern browsers support import maps natively.
+        importmap_polyfill: false
+        # The CSP nonce changes on every request; keep Turbo from tracking the
+        # import map by giving the attribute an empty value.
+        importmap_script_attributes:
+            data-turbo-track: ''
 
 when@prod:
     framework:

@@ -148,14 +148,19 @@ root and the vhost must be fixed.
 Production CSP:
 
 ```text
-default-src 'self'; script-src 'self' 'nonce-<per-request>'; style-src 'self';
+default-src 'self'; script-src 'self' 'nonce-<per-request>'; style-src 'self' 'unsafe-inline';
 img-src 'self' data:; font-src 'self' data:; connect-src 'self';
 frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
 ```
 
-Development CSP adds `'unsafe-inline'` to `script-src` and `style-src` for the
-Symfony debug toolbar. Production never allows inline script without the
-per-request nonce.
+`style-src` keeps `'unsafe-inline'` because Turbo's progress bar writes inline
+styles through the CSSOM, which a nonce cannot cover. Scripts stay strict:
+production never allows inline script without the per-request nonce.
+
+Development CSP adds `'unsafe-inline' 'unsafe-eval'` to `script-src` for the
+Symfony debug toolbar. Because browsers ignore `'unsafe-inline'` as soon as a
+nonce is present, the dev policy deliberately omits the nonce; the toolbar
+generates its own for its assets.
 
 Asset loading is CSP-friendly:
 
