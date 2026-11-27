@@ -1,0 +1,163 @@
+{
+  "version": 2,
+  "id": "courses_lobby",
+  "name": "Hall des cours",
+  "image": "/game/maps/courses_lobby.webp",
+  "width": 1536,
+  "height": 1024,
+  "camera": "fit",
+  "zoom": 1,
+  "spawn": {
+    "x": 768,
+    "y": 850
+  },
+  "walls": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 1536,
+      "h": 70
+    },
+    {
+      "x": 0,
+      "y": 954,
+      "w": 1536,
+      "h": 70
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "w": 60,
+      "h": 270
+    },
+    {
+      "x": 0,
+      "y": 390,
+      "w": 60,
+      "h": 634
+    },
+    {
+      "x": 1476,
+      "y": 0,
+      "w": 60,
+      "h": 460
+    },
+    {
+      "x": 1476,
+      "y": 580,
+      "w": 60,
+      "h": 444
+    },
+    {
+      "x": 160,
+      "y": 230,
+      "w": 260,
+      "h": 100
+    },
+    {
+      "x": 160,
+      "y": 450,
+      "w": 260,
+      "h": 100
+    },
+    {
+      "x": 160,
+      "y": 670,
+      "w": 260,
+      "h": 100
+    },
+    {
+      "x": 1110,
+      "y": 230,
+      "w": 260,
+      "h": 100
+    },
+    {
+      "x": 1110,
+      "y": 670,
+      "w": 260,
+      "h": 100
+    },
+    {
+      "x": 440,
+      "y": 360,
+      "w": 180,
+      "h": 90
+    },
+    {
+      "x": 920,
+      "y": 360,
+      "w": 180,
+      "h": 90
+    }
+  ],
+  "doors": [
+    {
+      "id": "ouest",
+      "rect": {
+        "x": 0,
+        "y": 270,
+        "w": 60,
+        "h": 120
+      },
+      "to": "dojo",
+      "spawn": {
+        "x": 1240,
+        "y": 440
+      },
+      "facing": "left"
+    },
+    {
+      "id": "est",
+      "rect": {
+        "x": 1476,
+        "y": 460,
+        "w": 60,
+        "h": 120
+      },
+      "to": "hall",
+      "spawn": {
+        "x": 140,
+        "y": 420
+      },
+      "facing": "right"
+    }
+  ],
+  "slots": [],
+  "interactables": [
+    {
+      "id": "reception",
+      "kind": "library_desk",
+      "rect": {
+        "x": 620,
+        "y": 110,
+        "w": 300,
+        "h": 90
+      },
+      "label": "Accueil des cours"
+    },
+    {
+      "id": "catalogue",
+      "kind": "info_board",
+      "rect": {
+        "x": 1170,
+        "y": 110,
+        "w": 220,
+        "h": 80
+      },
+      "label": "Catalogue des cours"
+    },
+    {
+      "id": "progress",
+      "kind": "progress_board",
+      "rect": {
+        "x": 620,
+        "y": 840,
+        "w": 300,
+        "h": 80
+      },
+      "label": "Mon progrès"
+    }
+  ],
+  "npcs": []
+}

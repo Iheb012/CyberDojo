@@ -1,0 +1,224 @@
+{
+  "version": 2,
+  "id": "hall",
+  "name": "Hall principal",
+  "image": "/game/maps/hall.webp",
+  "width": 1402,
+  "height": 1122,
+  "camera": "fit",
+  "zoom": 1,
+  "spawn": {
+    "x": 700,
+    "y": 720
+  },
+  "walls": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 140,
+      "h": 70
+    },
+    {
+      "x": 310,
+      "y": 0,
+      "w": 780,
+      "h": 70
+    },
+    {
+      "x": 1260,
+      "y": 0,
+      "w": 142,
+      "h": 70
+    },
+    {
+      "x": 0,
+      "y": 1052,
+      "w": 140,
+      "h": 70
+    },
+    {
+      "x": 310,
+      "y": 1052,
+      "w": 780,
+      "h": 70
+    },
+    {
+      "x": 1260,
+      "y": 1052,
+      "w": 142,
+      "h": 70
+    },
+    {
+      "x": 0,
+      "y": 70,
+      "w": 60,
+      "h": 310
+    },
+    {
+      "x": 0,
+      "y": 460,
+      "w": 60,
+      "h": 592
+    },
+    {
+      "x": 1342,
+      "y": 70,
+      "w": 60,
+      "h": 982
+    },
+    {
+      "x": 180,
+      "y": 230,
+      "w": 240,
+      "h": 110
+    },
+    {
+      "x": 180,
+      "y": 800,
+      "w": 240,
+      "h": 110
+    },
+    {
+      "x": 980,
+      "y": 230,
+      "w": 240,
+      "h": 110
+    },
+    {
+      "x": 980,
+      "y": 800,
+      "w": 240,
+      "h": 110
+    },
+    {
+      "x": 560,
+      "y": 230,
+      "w": 280,
+      "h": 100
+    },
+    {
+      "x": 560,
+      "y": 800,
+      "w": 280,
+      "h": 100
+    },
+    {
+      "x": 400,
+      "y": 620,
+      "w": 140,
+      "h": 100
+    },
+    {
+      "x": 860,
+      "y": 620,
+      "w": 140,
+      "h": 100
+    }
+  ],
+  "doors": [
+    {
+      "id": "osint",
+      "rect": {
+        "x": 140,
+        "y": 0,
+        "w": 170,
+        "h": 70
+      },
+      "to": "course_osint",
+      "spawn": {
+        "x": 768,
+        "y": 860
+      },
+      "facing": "up"
+    },
+    {
+      "id": "web",
+      "rect": {
+        "x": 1090,
+        "y": 0,
+        "w": 170,
+        "h": 70
+      },
+      "to": "course_web",
+      "spawn": {
+        "x": 768,
+        "y": 860
+      },
+      "facing": "up"
+    },
+    {
+      "id": "courses",
+      "rect": {
+        "x": 0,
+        "y": 380,
+        "w": 60,
+        "h": 80
+      },
+      "to": "courses_lobby",
+      "spawn": {
+        "x": 1380,
+        "y": 520
+      },
+      "facing": "left"
+    },
+    {
+      "id": "crypto",
+      "rect": {
+        "x": 140,
+        "y": 1052,
+        "w": 170,
+        "h": 70
+      },
+      "to": "course_crypto",
+      "spawn": {
+        "x": 768,
+        "y": 860
+      },
+      "facing": "up"
+    },
+    {
+      "id": "reseaux",
+      "rect": {
+        "x": 1090,
+        "y": 1052,
+        "w": 170,
+        "h": 70
+      },
+      "to": "course_reseaux",
+      "spawn": {
+        "x": 768,
+        "y": 860
+      },
+      "facing": "up"
+    }
+  ],
+  "slots": [],
+  "interactables": [
+    {
+      "id": "shield",
+      "kind": "info_board",
+      "rect": {
+        "x": 600,
+        "y": 480,
+        "w": 200,
+        "h": 160
+      },
+      "label": "Tableau du hall"
+    }
+  ],
+  "npcs": [
+    {
+      "id": "accueil",
+      "x": 700,
+      "y": 420,
+      "sprite": "sensei-idle",
+      "spriteIdle": "sensei-idle",
+      "spriteTalk": "sensei-talk",
+      "scale": 2,
+      "frames": { "idle": 1, "talk": 4 },
+      "fps": { "idle": 1, "talk": 5 },
+      "dialog": "accueil_intro",
+      "name": "Accueil"
+    }
+  ]
+}

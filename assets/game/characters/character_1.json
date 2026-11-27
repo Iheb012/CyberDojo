@@ -1,0 +1,1001 @@
+{
+  "id": "character_1",
+  "name": "Personnage 1",
+  "default": "32x32",
+  "speed": 140,
+  "interaction": {
+    "reach": 40
+  },
+  "variants": {
+    "32x32": {
+      "name": "Skin 1 — Défaut",
+      "src": "/game/sprites/character_1_32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 0,
+      "shop": true
+    },
+    "16x20": {
+      "name": "Skin 1 — Format 16×20",
+      "src": "/game/sprites/character_1_16x20.png",
+      "columns": 3,
+      "frameWidth": 16,
+      "frameHeight": 20,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 3,
+      "hitbox": {
+        "w": 4,
+        "h": 3,
+        "offsetX": 6,
+        "offsetY": 16
+      },
+      "price": 0,
+      "shop": false
+    },
+    "skin-02": {
+      "name": "Skin 2",
+      "src": "/game/sprites/character_2_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-03": {
+      "name": "Skin 3",
+      "src": "/game/sprites/character_3_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-04": {
+      "name": "Skin 4",
+      "src": "/game/sprites/character_4_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-05": {
+      "name": "Skin 5",
+      "src": "/game/sprites/character_5_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-06": {
+      "name": "Skin 6",
+      "src": "/game/sprites/character_6_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-07": {
+      "name": "Skin 7",
+      "src": "/game/sprites/character_7_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-08": {
+      "name": "Skin 8",
+      "src": "/game/sprites/character_8_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-09": {
+      "name": "Skin 9",
+      "src": "/game/sprites/character_9_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-10": {
+      "name": "Skin 10",
+      "src": "/game/sprites/character_10_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 50,
+      "shop": true
+    },
+    "skin-11": {
+      "name": "Skin 11",
+      "src": "/game/sprites/character_11_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-12": {
+      "name": "Skin 12",
+      "src": "/game/sprites/character_12_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-13": {
+      "name": "Skin 13",
+      "src": "/game/sprites/character_13_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-14": {
+      "name": "Skin 14",
+      "src": "/game/sprites/character_14_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-15": {
+      "name": "Skin 15",
+      "src": "/game/sprites/character_15_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-16": {
+      "name": "Skin 16",
+      "src": "/game/sprites/character_16_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-17": {
+      "name": "Skin 17",
+      "src": "/game/sprites/character_17_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-18": {
+      "name": "Skin 18",
+      "src": "/game/sprites/character_18_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-19": {
+      "name": "Skin 19",
+      "src": "/game/sprites/character_19_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-20": {
+      "name": "Skin 20",
+      "src": "/game/sprites/character_20_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 100,
+      "shop": true
+    },
+    "skin-21": {
+      "name": "Skin 21",
+      "src": "/game/sprites/character_21_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-22": {
+      "name": "Skin 22",
+      "src": "/game/sprites/character_22_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-23": {
+      "name": "Skin 23",
+      "src": "/game/sprites/character_23_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-24": {
+      "name": "Skin 24",
+      "src": "/game/sprites/character_24_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-25": {
+      "name": "Skin 25",
+      "src": "/game/sprites/character_25_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-26": {
+      "name": "Skin 26",
+      "src": "/game/sprites/character_26_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-27": {
+      "name": "Skin 27",
+      "src": "/game/sprites/character_27_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-28": {
+      "name": "Skin 28",
+      "src": "/game/sprites/character_28_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-29": {
+      "name": "Skin 29",
+      "src": "/game/sprites/character_29_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-30": {
+      "name": "Skin 30",
+      "src": "/game/sprites/character_30_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 150,
+      "shop": true
+    },
+    "skin-31": {
+      "name": "Skin 31",
+      "src": "/game/sprites/character_31_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 200,
+      "shop": true
+    },
+    "skin-32": {
+      "name": "Skin 32",
+      "src": "/game/sprites/character_32_frame32x32.png",
+      "columns": 3,
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "rows": {
+        "down": 0,
+        "left": 1,
+        "right": 2,
+        "up": 3
+      },
+      "walkCycle": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "idle": 1,
+      "fps": 8,
+      "playerScale": 6,
+      "hitbox": {
+        "w": 8,
+        "h": 5,
+        "offsetX": 12,
+        "offsetY": 10
+      },
+      "price": 200,
+      "shop": true
+    }
+  }
+}

@@ -1,4 +1,3 @@
-body {
 /* ---------- Game: full-window layout ---------- */
 .game-page { position: fixed; inset: 0; z-index: 1000; background: #12141c; }
 .game { position: relative; width: 100%; height: 100%; display: flex; flex-direction: column; font-family: sans-serif; }
@@ -6,7 +5,7 @@ body {
 .game-hud a { color: #9ab; text-decoration: none; }
 .game-hint { flex: 1; text-align: center; color: #fc0; min-height: 1.2em; }
 .game-fs { background: #2a2f42; color: #fff; border: 1px solid #444; border-radius: 4px; padding: .2rem .6rem; cursor: pointer; }
-.game-stage { flex: 1 1 auto; min-height: 0; display: flex; align-items: center; justify-content: center; }
+.game-stage { flex: 1 1 auto; min-height: 0; position: relative; display: flex; align-items: center; justify-content: center; }
 .game canvas { display: block; border: 2px solid #333; image-rendering: pixelated; }
 
 /* Challenge window */
@@ -20,7 +19,83 @@ body {
 .game-message { min-height: 1.2em; font-size: .9rem; }
 .game-ok { color: #1a7f1a; font-weight: bold; }
 .game-ko { color: #b00; }
-}
+.game-debug-hint { color: #789; font-size: .75rem; white-space: nowrap; }
+
+/* Map loading bar */
+.game-loading { position: absolute; left: 50%; bottom: 1.5rem; transform: translateX(-50%); width: min(320px, 70%); color: #fff; font-size: .8rem; text-align: center; opacity: 0; pointer-events: none; transition: opacity .15s; }
+.game-loading.is-visible { opacity: 1; }
+.game-loading-track { margin-top: .35rem; height: 6px; border: 1px solid #445; border-radius: 3px; background: #151822; overflow: hidden; }
+.game-loading-bar { width: 0; height: 100%; background: #fc0; transition: width .12s linear; }
+
+/* Dev-only F3 map editor */
+.game-editor { position: absolute; top: .5rem; right: .5rem; z-index: 20; width: min(360px, 42vw); max-height: calc(100% - 1rem); overflow: auto; box-sizing: border-box; padding: .75rem; border: 1px solid #4b5563; border-radius: 8px; background: rgba(20, 23, 32, .95); color: #e5e7eb; font: .8rem/1.35 monospace; }
+.game-editor-title { display: block; margin-bottom: .5rem; color: #fbbf24; }
+.game-editor-row { display: flex; align-items: center; gap: .5rem; margin-bottom: .5rem; }
+.game-editor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .35rem .5rem; }
+.game-editor-field { display: flex; align-items: center; gap: .35rem; }
+.game-editor-field > span { flex: 0 0 3.5rem; color: #9ca3af; }
+.game-editor-field input, .game-editor select { min-width: 0; width: 100%; box-sizing: border-box; padding: .2rem .35rem; border: 1px solid #4b5563; border-radius: 4px; background: #0f1117; color: #e5e7eb; font: inherit; }
+.game-editor-field[hidden] { display: none; }
+.game-editor-actions { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .6rem; }
+.game-editor-actions button { padding: .25rem .5rem; border: 1px solid #4b5563; border-radius: 4px; background: #2a2f42; color: #fff; cursor: pointer; font: inherit; }
+.game-editor-actions button:hover { background: #39405a; }
+.game-editor-status { margin: .5rem 0 0; min-height: 1.2em; color: #fbbf24; }
+
+/* Skin shop window: the artwork (data-game-skin-shop-value) is the whole frame.
+   Everything inside is sized in cqw (1% of the panel width) so it scales with it;
+   positions are % of the 1376x768 artwork. */
+.game-shop-panel { position: relative; container-type: inline-size; width: min(94vw, 1200px, calc(92vh * 1376 / 768)); aspect-ratio: 1376 / 768; box-sizing: border-box; background-color: #05060f; border-radius: 8px; box-shadow: 0 12px 40px rgba(0, 0, 0, .55); overflow: hidden; font-family: 'Courier New', ui-monospace, monospace; }
+
+.game-shop-art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: fill; pointer-events: none; user-select: none; }
+
+/* Plain frame used when the artwork cannot be loaded */
+.game-shop-missing { position: absolute; left: 6.2%; top: 11%; margin: 0; font-size: 1.1cqw; color: #fbbf24; }
+.game-shop-panel.no-art { background-image: none; background-color: #0a0d1c; border: 4px solid #5b45b0; box-sizing: border-box; }
+.game-shop-panel.no-art::before { content: 'Boutique de skins  ·  E / Échap pour quitter'; position: absolute; left: 6.2%; top: 5%; font-size: 1.8cqw; font-weight: 700; color: #4ade80; }
+.game-shop-panel.no-art .game-shop-balance { background: transparent; }
+.game-shop-panel.no-art .game-shop-close, .game-shop-panel.no-art .game-shop-exit { border: 2px solid #4ade80; }
+.game-shop-panel.no-art .game-shop-close::after { content: '✕'; color: #f87171; font-size: 2cqw; }
+.game-shop-panel.no-art .game-shop-exit::after { content: 'Quitter'; color: #d7ffe9; font-size: 1.6cqw; font-weight: 700; }
+
+/* Invisible buttons over the drawn red X and the drawn "Exit Terminal" key */
+.game-shop-hit { position: absolute; padding: 0; border: 0; border-radius: 6px; background: transparent; cursor: pointer; }
+.game-shop-hit:hover, .game-shop-hit:focus-visible { outline: 2px solid #4ade80; outline-offset: -2px; background: rgba(74, 222, 128, .12); }
+.game-shop-close { left: 91.6%; top: 8.6%; width: 4.5%; height: 4.4%; }
+.game-shop-exit { left: 80.5%; top: 91.4%; width: 17.1%; height: 7.6%; }
+
+.game-shop-status { position: absolute; left: 6.2%; top: 17.6%; width: 70%; margin: 0; font-size: 1.55cqw; font-weight: 700; color: #4ade80; text-shadow: 0 0 6px rgba(74, 222, 128, .45); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Real balance drawn over the placeholder number baked into the artwork */
+.game-shop-balance { position: absolute; left: 85%; top: 18.2%; width: 9.3%; height: 5.7%; box-sizing: border-box; padding-right: .9cqw; display: flex; align-items: center; justify-content: flex-end; background: #0f1224; color: #2ee66b; font-size: 2.1cqw; font-weight: 700; text-shadow: 0 0 8px rgba(46, 230, 107, .5); }
+
+.game-shop-grid { position: absolute; left: 6.2%; width: 88%; top: 26.6%; bottom: 21.3%; box-sizing: border-box; padding: .4cqw .8cqw .4cqw .1cqw; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 13.6cqw; gap: .9cqw; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #22c55e #07101a; }
+.game-shop-grid::-webkit-scrollbar { width: .8cqw; }
+.game-shop-grid::-webkit-scrollbar-track { background: #07101a; }
+.game-shop-grid::-webkit-scrollbar-thumb { background: #22c55e; border-radius: 4px; }
+
+.skin-card { display: flex; align-items: stretch; gap: .8cqw; min-width: 0; padding: .8cqw; box-sizing: border-box; border: 2px solid rgba(74, 222, 128, .28); border-radius: .7cqw; background: linear-gradient(180deg, rgba(12, 22, 34, .95), rgba(7, 12, 22, .95)); color: #d7ffe9; }
+.skin-card:hover { border-color: rgba(74, 222, 128, .7); }
+.skin-card.is-owned { border-color: rgba(167, 139, 250, .55); }
+.skin-card.is-equipped { border-color: #fbbf24; box-shadow: 0 0 1.2cqw rgba(251, 191, 36, .35); }
+
+.skin-photo { flex: 0 0 auto; align-self: center; width: 10.8cqw; height: 10.8cqw; border-radius: .5cqw; background: radial-gradient(circle at 50% 70%, rgba(46, 230, 107, .22), rgba(3, 10, 18, .9) 70%); border: 1px solid rgba(74, 222, 128, .25); overflow: hidden; }
+.game .skin-thumb { display: block; width: 100%; height: 100%; border: 0; image-rendering: pixelated; }
+
+.skin-info { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: .6cqw; }
+.skin-name { font-size: 1.25cqw; line-height: 1.2; font-weight: 700; color: #e8fff1; overflow-wrap: anywhere; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+.skin-action { display: flex; align-items: center; justify-content: center; gap: .5cqw; width: 100%; min-height: 3cqw; padding: .3cqw .4cqw; box-sizing: border-box; border: 2px solid transparent; border-radius: .5cqw; font: 700 1.3cqw/1 'Courier New', ui-monospace, monospace; cursor: pointer; white-space: nowrap; overflow: hidden; }
+.skin-action.is-buy { background: linear-gradient(180deg, #0f4a2d, #06281a); border-color: #34e57a; color: #eafff3; box-shadow: 0 0 .8cqw rgba(52, 229, 122, .35); }
+.skin-action.is-buy:hover { background: linear-gradient(180deg, #14653c, #0a3a25); box-shadow: 0 0 1.1cqw rgba(52, 229, 122, .6); }
+.skin-action.is-buy.is-poor { background: #151c24; border-color: #3b4a56; color: #8aa0ad; box-shadow: none; cursor: not-allowed; }
+.skin-action.is-buy.is-poor:hover { background: #151c24; box-shadow: none; }
+.skin-action.is-buy.is-poor .skin-coin { filter: grayscale(1) brightness(.7); }
+.skin-action.is-owned { background: linear-gradient(180deg, #8b5cf6, #6d3fd6); border-color: #c4b5fd; color: #fff; }
+.skin-action.is-owned:hover { filter: brightness(1.12); }
+.skin-action.is-equipped { background: rgba(251, 191, 36, .12); border-color: #fbbf24; color: #fbbf24; cursor: default; }
+.skin-coin { flex: 0 0 auto; width: 1.9cqw; height: 1.9cqw; image-rendering: pixelated; }
+.skin-price { font-size: 1.5cqw; }
+.skin-action:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 /* ---------- Home ---------- */
 .home { min-height: 100vh; margin: 0; padding: 2rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; background: #12141c; color: #fff; font-family: sans-serif; text-align: center; }
