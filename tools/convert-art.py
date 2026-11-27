@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC_DIR = ROOT / "art-src"
 MAPS_DIR = ROOT / "public" / "game" / "maps"
 SPRITES_DIR = ROOT / "public" / "game" / "sprites"
+UI_DIR = ROOT / "public" / "game" / "ui"
 QUALITY = 90
 
 
@@ -37,6 +38,15 @@ def main() -> int:
 
     MAPS_DIR.mkdir(parents=True, exist_ok=True)
     SPRITES_DIR.mkdir(parents=True, exist_ok=True)
+    UI_DIR.mkdir(parents=True, exist_ok=True)
+
+    for ui_image in sorted([*SRC_DIR.glob("*.jpg"), *SRC_DIR.glob("*.jpeg")]):
+        target = UI_DIR / ui_image.name
+        shutil.copyfile(ui_image, target)
+        print(
+            f"{ui_image.name} -> {target.relative_to(ROOT)} "
+            f"(copied, {human_size(target.stat().st_size)})"
+        )
 
     for png in pngs:
         if png.name.startswith("character_"):
