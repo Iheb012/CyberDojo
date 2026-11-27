@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CyberDojo{% endblock %}
+
+{% block body %}
+    <main class="home">
+        <h1>CyberDojo</h1>
+        <p>Entrez dans le dojo et résolvez les challenges pour progresser.</p>
+        <a class="home-cta" href="{{ path('app_game') }}">Entrer dans le dojo</a>
+    </main>
+{% endblock %}
