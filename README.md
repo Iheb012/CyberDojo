@@ -176,7 +176,7 @@ Original PNGs are committed in `art-src/` (outside `public/`, never served).
 Generated WebP files are served from `public/game/`:
 
 - `public/game/maps/` — room backgrounds
-- `public/game/sprites/` — characters
+- `public/game/sprites/` — player and sensei sprites
 
 Convert after adding or replacing a PNG:
 
@@ -188,6 +188,22 @@ python tools/convert-art.py
 The script converts map PNGs to WebP at quality 90 and copies sprite PNGs
 as-is (pixel art is kept lossless). See `art-src/README.md` for the expected
 file names.
+
+## Game maps
+
+The game uses nine hand-painted rooms (`dojo`, `ctf`, `rewards`,
+`courses_lobby`, `hall`, `course_web`, `course_crypto`, `course_osint`,
+`course_reseaux`). The tile engine is gone. `config/packages/game.yaml` holds
+the room list used by the access service, the validator and Twig.
+
+```powershell
+php bin/console app:maps:validate   # images, rectangles, doors, reachability
+```
+
+Details, server contract and dev keys are in `docs/v2-maps.md`; the manual
+wall/corner/door walkthrough is in `docs/v2-map-test-checklist.md`. In dev only,
+`/jeu/personnage-test` shows every sprite-sheet row, F2 toggles the collision
+overlay and F3 opens the map editor (`/jeu/editeur` is 404 in prod).
 
 ## Verification
 
