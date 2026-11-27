@@ -1,5 +1,7 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        game_maps: '%game.maps%'
 
 when@test:
     twig:

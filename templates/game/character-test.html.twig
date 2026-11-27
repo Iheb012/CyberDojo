@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Test du personnage{% endblock %}
+
+{% block body %}
+    <div class="home">
+        <h1>Feuilles de personnage</h1>
+        <p>Chaque ligne est affichée avec ses 3 images. Le cadre jaune marque l'image « idle ».</p>
+        <label>
+            Variante :
+            <select data-character-test-variant></select>
+        </label>
+        <canvas data-character-test data-config="{{ asset('game/characters/character_1.json') }}"></canvas>
+        <p data-character-test-status>Chargement…</p>
+        <a class="home-cta" href="{{ path('app_game') }}">Retour au jeu</a>
+    </div>
+    <script type="module" src="{{ asset('game/character-test.js') }}"></script>
+{% endblock %}

@@ -33,6 +33,9 @@ final class GameApiController extends AbstractController
                 'id' => $c->getId(),
                 'titre' => $c->getTitre(),
                 'typeObjet' => $c->getTypeObjet(),
+                // Rooms place objects at the slot rectangle; posX/posY are kept
+                // nullable in the payload for older clients.
+                'slot' => $c->getSlot(),
                 'posX' => $c->getPosX(),
                 'posY' => $c->getPosY(),
                 'etat' => $this->isLocked($c) ? 'verrouille' : 'disponible',

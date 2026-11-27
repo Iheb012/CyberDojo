@@ -1,26 +1,44 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Le Dojo{% endblock %}
+{% block title %}CyberDojo{% endblock %}
 
 {% block body %}
+    {# The room ids come from config/packages/game.yaml (Twig global). #}
+    {% set game_map_urls = {} %}
+    {% for map_id in game_maps %}
+        {% set game_map_urls = game_map_urls|merge({(map_id): asset('game/maps/' ~ map_id ~ '.json')}) %}
+    {% endfor %}
     <div class="game-page">
         <div class="game"
              data-controller="game"
              data-game-start-value="dojo"
              data-game-api-value="{{ app.request.basePath }}/api/jeu"
+             data-game-access-value="{{ app.request.basePath }}/salles"
              data-game-csrf-value="{{ csrf_token('game') }}"
-             data-game-maps-value="{{ {
-                 'dojo': asset('game/maps/dojo.json'),
-                 'lab-web': asset('game/maps/lab-web.json')
-             }|json_encode }}">
+             data-game-character-value="{{ asset('game/characters/character_1.json') }}"
+             data-game-sprites-value="{{ {'sensei': asset('game/sprites/character_sensei_atlas.png')}|json_encode|e('html_attr') }}"
+             data-game-skin-shop-value="{{ asset('game/ui/shop-frame.jpg') }}"
+             data-game-coin-value="{{ asset('game/ui/coin.png') }}"
+             data-game-editor-value="{{ path('app_game_editor') }}"
+             data-game-debug-value="{{ app.environment == 'dev' ? 'true' : 'false' }}"
+             data-game-maps-value="{{ game_map_urls|json_encode|e('html_attr') }}">
             <header class="game-hud">
                 <a href="{{ path('app_home') }}">&larr; Quitter</a>
                 <strong data-game-target="title"></strong>
                 <span class="game-hint" data-game-target="hint"></span>
+                {% if app.environment == 'dev' %}
+                    <span class="game-debug-hint">F2 : debug · F3 : éditeur</span>
+                {% endif %}
                 <button type="button" class="game-fs" data-action="game#toggleFullscreen" title="Plein écran (F)">⛶</button>
             </header>
             <div class="game-stage" data-game-target="stage">
                 <canvas data-game-target="canvas"></canvas>
+                <div class="game-loading" data-game-target="progress" role="status" aria-live="polite">
+                    <span>Chargement…</span>
+                    <div class="game-loading-track">
+                        <div class="game-loading-bar" data-game-target="progressBar"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -48,7 +48,12 @@ class Challenge
     #[ORM\Column(nullable: true)]
     private ?int $posY = null;
 
-    // TEMPORARY: map id such as 'lab-web'. Becomes a ManyToOne Lab once member C's entity exists.
+    // Id of the slot.rect where the server places this object in a room.
+    // posX/posY stay nullable; no tile coordinates are used by the game.
+    #[ORM\Column(length: 100, nullable: true)]
+    private ?string $slot = null;
+
+    // TEMPORARY: room id such as 'ctf'. Becomes a ManyToOne Lab once member C's entity exists.
     #[ORM\Column(length: 50, nullable: true)]
     private ?string $salle = null;
 
@@ -93,6 +98,9 @@ class Challenge
 
     public function getPosY(): ?int { return $this->posY; }
     public function setPosY(?int $posY): static { $this->posY = $posY; return $this; }
+
+    public function getSlot(): ?string { return $this->slot; }
+    public function setSlot(?string $slot): static { $this->slot = $slot; return $this; }
 
     public function getSalle(): ?string { return $this->salle; }
     public function setSalle(?string $salle): static { $this->salle = $salle; return $this; }

@@ -1,0 +1,13 @@
+# Single source of truth for the room list: used by the door access service,
+# the map validator and the Twig template that registers the map URLs.
+parameters:
+    game.maps:
+        - dojo
+        - ctf
+        - rewards
+        - courses_lobby
+        - hall
+        - course_web
+        - course_crypto
+        - course_osint
+        - course_reseaux
