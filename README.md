@@ -170,6 +170,24 @@ Asset loading is CSP-friendly:
 - The import map and the entry-point script receive the per-request nonce.
 - The FrankenPHP hot-reload CDN block was removed.
 
+## Game art
+
+Original PNGs are committed in `art-src/` (outside `public/`, never served).
+Generated WebP files are served from `public/game/`:
+
+- `public/game/maps/` — room backgrounds
+- `public/game/sprites/` — characters
+
+Convert after adding or replacing a PNG:
+
+```powershell
+python -m pip install Pillow   # once, needs WebP support
+python tools/convert-art.py
+```
+
+The script writes WebP at quality 90 and keeps the source dimensions. See
+`art-src/README.md` for the expected file names.
+
 ## Verification
 
 ```powershell
