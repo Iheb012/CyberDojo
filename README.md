@@ -185,8 +185,9 @@ python -m pip install Pillow   # once, needs WebP support
 python tools/convert-art.py
 ```
 
-The script writes WebP at quality 90 and keeps the source dimensions. See
-`art-src/README.md` for the expected file names.
+The script converts map PNGs to WebP at quality 90 and copies sprite PNGs
+as-is (pixel art is kept lossless). See `art-src/README.md` for the expected
+file names.
 
 ## Verification
 

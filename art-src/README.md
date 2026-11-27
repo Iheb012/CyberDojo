@@ -28,5 +28,5 @@ Expected files:
 | `course_osint.png` | `public/game/maps/course_osint.webp` |
 | `course_reseaux.png` | `public/game/maps/course_reseaux.webp` |
 | `world.png` | `public/game/maps/world.webp` |
-| `character_1_32x32.png` | `public/game/sprites/character_1_32x32.webp` |
-| `character_1_16x20.png` | `public/game/sprites/character_1_16x20.webp` |
+| `character_1_32x32.png` | `public/game/sprites/character_1_32x32.png` (copied as-is) |
+| `character_1_16x20.png` | `public/game/sprites/character_1_16x20.png` (copied as-is) |

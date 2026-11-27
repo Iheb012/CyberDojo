@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
-"""Convert the original PNG art to WebP for the game.
+"""Prepare the game art from the original PNG files.
 
-Sources live in art-src/ (never served). Outputs go to public/game/maps/
-and public/game/sprites/. See art-src/README.md for the expected names.
+Maps are converted to WebP (quality 90); sprites are pixel art, so they are
+copied as PNG without re-encoding. Sources live in art-src/ (never served).
+See art-src/README.md for the expected names.
 """
 
 from __future__ import annotations
 
+import shutil
 import sys
 from pathlib import Path
 
@@ -37,19 +39,27 @@ def main() -> int:
     SPRITES_DIR.mkdir(parents=True, exist_ok=True)
 
     for png in pngs:
-        target_dir = SPRITES_DIR if png.name.startswith("character_") else MAPS_DIR
-        target = target_dir / f"{png.stem}.webp"
+        if png.name.startswith("character_"):
+            target = SPRITES_DIR / png.name
+            shutil.copyfile(png, target)
+            print(
+                f"{png.name} -> {target.relative_to(ROOT)} "
+                f"(copied, {human_size(target.stat().st_size)})"
+            )
+            continue
 
+        target = MAPS_DIR / f"{png.stem}.webp"
         with Image.open(png) as image:
             has_alpha = image.mode in ("RGBA", "LA") or (
                 image.mode == "P" and "transparency" in image.info
             )
             image = image.convert("RGBA" if has_alpha else "RGB")
             image.save(target, "WEBP", quality=QUALITY, method=6)
+            width, height = image.size
 
         print(
             f"{png.name} -> {target.relative_to(ROOT)} "
-            f"({image.width}x{image.height}, "
+            f"({width}x{height}, "
             f"{human_size(png.stat().st_size)} -> {human_size(target.stat().st_size)})"
         )
 
