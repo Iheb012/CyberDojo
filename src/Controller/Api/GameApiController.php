@@ -8,7 +8,7 @@ use App\Service\FlagChecker;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\RateLimiter\RateLimiterFactory;
+use Symfony\Component\RateLimiter\RateLimiterFactoryInterface;
 use Symfony\Component\Routing\Attribute\Route;
 
 // TODO (login): add #[IsGranted('ROLE_USER')] on this class once member A's login exists.
@@ -64,7 +64,7 @@ final class GameApiController extends AbstractController
     }
 
     #[Route('/challenges/{id<\d+>}/flag', name: 'api_jeu_flag', methods: ['POST'])]
-    public function flag(int $id, Request $request, RateLimiterFactory $flagSubmissionLimiter): JsonResponse
+    public function flag(int $id, Request $request, RateLimiterFactoryInterface $flagSubmissionLimiter): JsonResponse
     {
         if (!$this->csrfOk($request)) {
             return $this->json(['error' => 'Jeton CSRF invalide.'], 403);
